@@ -1,0 +1,54 @@
+services:
+
+  php:
+    container_name: "php"
+    image: "docker.io/php:apache"
+    restart: "unless-stopped"
+    ports:
+      - "80:80/tcp" # webui
+      - "443:443/tcp"
+    volumes:
+     - "./var/www:/var/www/html"
+
+  evcc:
+    container_name: "evcc"
+    image: "docker.io/evcc/evcc:latest"
+    restart: "unless-stopped"
+    command:
+      - evcc
+    depends_on:
+      - "influxdb2"
+    ports:
+      - "7070:7070/tcp" # webui
+      - "8887:8887/tcp" # ocpp server
+      - "7090:7090/udp" # keba charger
+      - "9522:9522/udp" # sma sunny manager
+      - "4712:4712/tcp" # eebus
+      - "8899:8899/udp" # modbus
+#    devices:
+#      - /dev/ttyUSB0:/dev/ttyUSB0
+    volumes:
+      - "./var/evcc:/root/.evcc"
+
+  grafana:
+    container_name: "grafana"
+    image: "docker.io/grafana/grafana:main"
+    restart: "unless-stopped"
+    depends_on:
+      - "influxdb2"
+    ports:
+     - "3000:3000/tcp" # webui
+    volumes:
+      - "./var/grafana:/var/lib/grafana"
+      - "./etc/grafana/provisioning:/etc/grafana/provisioning"
+    user: "472"
+
+  influxdb2:
+    container_name: "influxdb2"
+    image: "docker.io/influxdb:2"
+    restart: "unless-stopped"
+    ports:
+      - "8086:8086/tcp" # webui
+    volumes:
+     - "./var/influxdb2:/var/lib/influxdb2"
+
