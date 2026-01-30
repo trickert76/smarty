@@ -25,6 +25,15 @@
   Die Docker Umgebung wird täglich um ca. 0:30 aktualisiert. Das System wird einmal im Monat um 6:30 aktualisiert. Und ein Backup erfolgt ebenfalls monatlich.
   </p>
 
+  <h3>Versionsverlauf</h3>
+  <ul>
+   <li>v1.0.0 - 30.01.2026
+    <ul>
+     <li>Initiale Version mit einem automatischen Upgrade Mechanismus</li>
+    </ul>
+   </li>
+  </ul>
+
   <h3>Wiederherstellung</h3>
   <p>
    Falls der Raspberry kaputt geht oder ersetzt werden soll, ladet die letzt Sicherung von oben herunter, kopiert sie via SSH auf den Raspberry und entpackt sie dort im Verzeichnis <code>/srv/smarty</code>.
@@ -56,25 +65,20 @@
    <li>Die MicroSD Karte in den Raspberry einlegen</li>
    <li>Raspberry Strom, Netzwerkkabel und evtl. für die Einrichtung Monitor, Tastatur und Maus anschleßen</li>
    <li>der Raspberry startet automatisch, sofern Strom anliegt</li>
-   <li>via SSH einloggen oder via Terminal auf dem Rechner eine Konsole öffnen und folgende Befehle eingeben</li>
-   <li><code>sudo su -</code></li>
-   <li><code>cd /srv</code></li>
-   <li><code>git clone https://github.com/trickert76/smarty.git</code></li>
-   <li><code>cd /srv/smarty</code></li>
-   <li><code>./bin/install.sh</code></li>
+   <li>via SSH einloggen oder via Terminal auf dem Rechner eine Konsole öffnen und folgende Befehle eingeben
+    <ul>
+     <li><code>sudo su -</code></li>
+     <li><code>cd /srv</code></li>
+     <li><code>git clone https://github.com/trickert76/smarty.git</code></li>
+     <li><code>cd /srv/smarty</code></li>
+     <li><code>./bin/install.sh</code></li>
+    </ul>
+   </li>
    <li>Der Script macht eine Aktualisierung des OS, installiert Docker und konfiguriert die Basis-Informationen für die Umgebung. Anschließend werden die Dienste gestartet.</li>
    <li>Nun muss in InfluxDB eine Organisation angelegt werden und ein allgmeiner Token erzeugt werden.</li>
    <li>Diesen Token in folgende Dateien eintragen (<code>.env</code>, <code>etc/grafana/provisioning/datasources/datasources.yml</code>)
    <li>In EVCC muss der Token via der WebUI eingetragen</li>
    <li>Damit ist das System eingerichtet.</li>
-  </ul>
-  <h3>Versionsverlauf</h3>
-  <ul>
-   <li>v1.0.0 - 30.01.2026
-    <ul>
-     <li>Initiale Version mit einem automatischen Upgrade Mechanismus</li>
-    </ul>
-   </li>
   </ul>
  </body>
 </html>
