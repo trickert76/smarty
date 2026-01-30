@@ -15,7 +15,7 @@ chmod 755 bin/*
 cp env .env
 cp etc/datasources.yml etc/grafana/provisioning/datasources/.
 
-cron etc/cron
+crontab etc/cron
 
 docker compose pull
 docker compose up -d

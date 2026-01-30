@@ -7,6 +7,6 @@ chmod 755 bin/*
 apt update
 apt upgrade -y
 
-cron etc/cron
+crontab etc/cron
 
 #eof
