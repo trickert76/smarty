@@ -55,3 +55,10 @@ Grafana EVCC Dashboards - https://github.com/ha-puzzles/evcc-grafana-dashboards
 
 ![Beispiel Grafana Dashboard](var/www/grafana.png)
 
+## Todos
+
+- Die Installation so aufbauen, dass der Token der InfluxDB via Script erzeugt und ausgelesen wird und dann in die Konfigs von EVCC und Grafana eintragen.
+- Die IP Konfiguration ohne GUI machen, damit man das nicht anschließen muss.
+- Grafana Dashboards automatisch importieren
+- InfluxDB Dashboard installieren
+- TLS Konfiguration

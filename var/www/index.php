@@ -8,7 +8,7 @@
   </style>
  </head>
  <body>
-  <h2>Smarthome</h2>
+  <h2>Smarty</h2>
   <p>
    Dieses System sammelt Daten via EVCC von der Solaranlage und der Wallbox und übergibt diese Daten an eine InfluxDB. Die Daten können dann dort oder via Grafana visualisiert werden.
   </p>
@@ -20,6 +20,10 @@
    <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>:3000/">Grafana</a></li>
    <li><a href="backup.tar.gz">Letzte Sicherung</a></li>
   </ul>
+  
+  <p>
+  Die Docker Umgebung wird täglich um ca. 0:30 aktualisiert. Das System wird einmal im Monat um 6:30 aktualisiert. Und ein Backup erfolgt ebenfalls monatlich.
+  </p>
 
   <h3>Wiederherstellung</h3>
   <p>
@@ -63,6 +67,14 @@
    <li>Diesen Token in folgende Dateien eintragen (<code>.env</code>, <code>etc/grafana/provisioning/datasources/datasources.yml</code>)
    <li>In EVCC muss der Token via der WebUI eingetragen</li>
    <li>Damit ist das System eingerichtet.</li>
+  </ul>
+  <h3>Versionsverlauf</h3>
+  <ul>
+   <li>v1.0.0 - 30.01.2026
+    <ul>
+     <li>Initiale Version mit einem automatischen Upgrade Mechanismus</li>
+    </ul>
+   </li>
   </ul>
  </body>
 </html>

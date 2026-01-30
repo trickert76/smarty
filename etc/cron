@@ -1,4 +1,5 @@
 # m h  dom mon dow command
 0   0  1   *   *   /srv/smarty/bin/backup.sh
-30  0  1   *   *   /srv/smarty/bin/update.sh
+0   6  1   *   *   /srv/smarty/bin/upgrade.sh
+30  0  *   *   *   /srv/smarty/bin/update.sh
 #eof
