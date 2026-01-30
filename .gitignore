@@ -1,5 +1,6 @@
 /.env
 /.project
+/etc/grafana/
 /var/influxdb2/*
 /var/evcc/*
 /var/grafana/*
