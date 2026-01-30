@@ -1,6 +1,6 @@
 /.env
 /.project
-/etc/grafana/
+/etc/grafana/provisioning/datasources/datasources.yml
 /var/influxdb2/*
 /var/evcc/*
 /var/grafana/*
