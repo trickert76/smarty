@@ -1,16 +1,17 @@
 #!/bin/sh
+cd /srv/smarty
 
 # aufräumen
-rm -rf /srv/smarthome/var/www/backup.tar.gz
+rm -rf var/www/backup.tar.gz
 
 # Templates kopieren für die Seite
-cp /srv/smarthome/bin/* /srv/smarthome/var/www/dist/.
-cp /srv/smarthome/etc/cron /srv/smarthome/var/www/dist/.
-cp /srv/smarthome/docker-compose.yml /srv/smarthome/var/www/dist/.
-cp /srv/smarthome/.env /srv/smarthome/var/www/dist/env
-cp /srv/smarthome/var/www/index.php /srv/smarthome/var/www/dist/index.php.html
+cp bin/*               var/www/dist/.
+cp etc/cron            var/www/dist/.
+cp docker-compose.yml  var/www/dist/.
+cp .env                var/www/dist/env
+cp var/www/index.php   var/www/dist/index.php.html
 
 # Sicherung erstellen
-tar -czf /tmp/backup.tar.gz /srv/smarthome
-mv /tmp/backup.tar.gz /srv/smarthome/var/www/backup.tar.gz
+tar -czf /tmp/backup.tar.gz .
+mv /tmp/backup.tar.gz var/www/backup.tar.gz
 

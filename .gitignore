@@ -1,0 +1,3 @@
+/.project
+/var/influxdb2/*
+/var/evcc/*
